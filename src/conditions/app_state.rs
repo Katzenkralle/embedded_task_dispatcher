@@ -20,7 +20,7 @@ impl Condition for AppCondition {
             None => Ok(false),
         }
     }
-    fn as_automaticlt_initializable(&self) -> Option<Vec<AutomaticltInitializable>> {
+    fn as_automaticlt_initializable(&self) -> Option<Vec<AutomaticltInitializable<'_>>> {
         Some(vec![AutomaticltInitializable::AppCondition(self)])
     }
     

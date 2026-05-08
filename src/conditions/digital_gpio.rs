@@ -74,7 +74,7 @@ impl Condition for DigitalGpioCondition {
             Ok(true)
         }
     }
-    fn as_automaticlt_initializable(&self) -> Option<Vec<AutomaticltInitializable>> {
+    fn as_automaticlt_initializable(&self) -> Option<Vec<AutomaticltInitializable<'_>>> {
         Some(vec![AutomaticltInitializable::DigitalGpioCondition(self)])
     }
 }

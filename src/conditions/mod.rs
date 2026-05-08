@@ -25,7 +25,7 @@ pub use constants::AllwaysTrue;
 
 pub trait Condition: Send + Sync + Debug {
     fn eval(&self, environment: &Environment, running_tree_state: &RunningTreeState) -> Result<bool, TaskError>;
-    fn as_automaticlt_initializable(&self) -> Option<Vec<AutomaticltInitializable>> {
+    fn as_automaticlt_initializable(&self) -> Option<Vec<AutomaticltInitializable<'_>>> {
         None
     }
 } 

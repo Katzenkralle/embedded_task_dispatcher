@@ -67,7 +67,7 @@ impl Condition for Gates {
             Gates::Not(condition) => Ok(!condition.eval(environment, running_tree)?),
         }
     }
-    fn as_automaticlt_initializable(&self) -> Option<Vec<AutomaticltInitializable>> {
+    fn as_automaticlt_initializable(&self) -> Option<Vec<AutomaticltInitializable<'_>>> {
         let mut initializables = Vec::new();
         match self {
             Gates::And(conditions) | Gates::Or(conditions) => {
